@@ -1,0 +1,39 @@
+.house {
+    width: 0px;
+    height: 0px;
+    border-left: 300px solid transparent;
+    border-right: 300px solid transparent;
+    border-bottom: 200px solid #AAAACC;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.rectangle {
+    height: 180px;
+    width: 500px;
+    background-color: #555;
+    margin-top: 7px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.rectangle:hover{
+	background-color: #999999;
+}
+body {
+    padding-top: 5rem;
+}
+
+.starter-template {
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+.rooms{
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 	
+	color:white;
+	position: relative;
+	float: left;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 25px;
+}
