@@ -17,4 +17,10 @@ public class SubSectionServiceimpl implements SubSectionService {
     public List<SubSection> getSubSection() {
         return subSectionDAO.getSubSections();
     }
+
+    @Override
+    public List<SubSection> getSubSectionsbyId(int id) {
+        return subSectionDAO.getSubSectionsbyId(id);
+    }
+
 }

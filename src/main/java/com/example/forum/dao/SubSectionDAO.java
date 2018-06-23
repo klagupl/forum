@@ -9,5 +9,6 @@ import java.util.List;
 public interface SubSectionDAO {
 
     public List<SubSection> getSubSections();
+    public List<SubSection> getSubSectionsbyId(int id);
 
 }

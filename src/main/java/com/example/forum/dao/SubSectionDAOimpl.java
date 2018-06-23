@@ -19,4 +19,11 @@ public class SubSectionDAOimpl implements SubSectionDAO {
         List<SubSection> subSections =entityManager.createQuery("FROM SubSection",SubSection.class).getResultList();
         return subSections;
     }
+
+    @Override
+    public List<SubSection> getSubSectionsbyId(int id) {
+       String hql="from SubSection s where s.id = :ids";
+       List<SubSection> result = entityManager.createQuery(hql,SubSection.class).setParameter("ids",id).getResultList();
+        return result;
+    }
 }

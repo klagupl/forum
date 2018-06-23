@@ -1,15 +1,9 @@
 angular.module('demo', [])
     .controller('Sections', function($scope, $http) {
-        $http.get('http://localhost:8080/sections').
+        $http.get('http://localhost:8080/api/sections').
         then(function(response) {
             $scope.section = response.data;
+            $scope.subsections=response.data.data;
         });
 
-    })
-.controller('SubSections', function($scope, $http) {
-    $http.get('http://localhost:8080/subsections').
-    then(function(response) {
-        $scope.subsections = response.data;
     });
-
-});

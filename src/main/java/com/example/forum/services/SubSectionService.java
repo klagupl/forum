@@ -9,5 +9,6 @@ public interface SubSectionService {
 
 
     public List<SubSection> getSubSection();
+    public List<SubSection> getSubSectionsbyId(int id);
 
 }

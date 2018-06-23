@@ -1,6 +1,7 @@
 package com.example.forum.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
@@ -20,13 +21,19 @@ public class SubSection {
     @Column(name="Opis")
     private String opis;
 
-    @JsonIgnore
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name="Section_SectionName")
     private Section section;
 
+
+
     @OneToMany(mappedBy = "subSection")
     private List<Topic> topics;
+
+
+
+    private int numberOfTopics;
 
     public int getId() {
         return id;
@@ -67,5 +74,14 @@ public class SubSection {
     public void setTopics(List<Topic> topics) {
         this.topics = topics;
     }
+
+    public int getNumberOfTopics() {
+        return topics.size();
+    }
+
+    public void setNumberOfTopics(int numberOfTopics) {
+        this.numberOfTopics = numberOfTopics;
+    }
+
 
 }

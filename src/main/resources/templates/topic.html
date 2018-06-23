@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html ng-app="demo" lang="en">
+<html ng-app="topic" lang="en">
 
   <head>
-      <script src="jquery/jquery.min.js"></script>
-      <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="../../../jquery/jquery.min.js"></script>
+      <script src="../../../bootstrap/js/bootstrap.bundle.min.js"></script>
       <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
-      <script src="js/get.js"></script>
+      <script src="../../../js/get.js"></script>
+
+      <script src="../../../js/gettopics.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -16,8 +18,8 @@
     <title>Bare - Start Bootstrap Template</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	    <link href="css/style.css" rel="stylesheet">
+    <link href="../../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	    <link href="../../../css/style.css" rel="stylesheet">
 
 
     <!-- Custom styles for this template -->
@@ -32,7 +34,7 @@
       }
 
     </style>
- <script src="jquery/jquery.min.js"></script>
+ <script src="../../../jquery/jquery.min.js"></script>
   </head>
 
   <body>
@@ -40,7 +42,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Start Bootstrap</a>
+        <a class="navbar-brand" href="#">Forum</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -71,60 +73,39 @@
 	
       <div class="row">
         <div class="col-9" id="Category1">
-		<table class="table"  ng-controller="Sections"style="margin-top:50px">
+		<table class="table table-bordered"  ng-controller="topics"style="margin-top:50px">
 		<colgroup>
+    <col style="width:20%">
     <col style="width:80%">
-    <col style="width:10%">
-    <col style="width:10%">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">Forum</th>
-      <th scope="col">Tematy</th>
-      <th scope="col">Posty</th>
+      <th scope="col">Autor</th>
+      <th scope="col">Treść</th>
     </tr>
   </thead>
 
-  <thead class="thead">
 
-
-  <th colspan ="4" scope="col">{{section[0].id}}</th>
-
-  </thead>
   <tbody>
 
 
-            <tr ng-repeat="x in section[0].sections">
-                <td><h5><a href="/subsection/{{x.id}}">{{x.subSectionName}}</a></h5>
-                        {{x.opis}}
+            <tr ng-repeat="x in topicss[0].topics">
+                <td><h6><a href="/subsection/{{x.id}}/topic/{{x.id}}">{{x.topicname}}</a></h6>
+                <td>{{x.numberOfPosts}}</td>
 
-                <td>{{x.numberOfTopics}}</td>
-                <td>2343</td>
             </tr>
 
             </tbody>
 
 
-            </tbody>
-
-  <thead class="thead">
-
-      <th colspan ="4" scope="col" ng-controller="Sections">{{section[1].id}}</th>
 
 
-  </thead>
-  <tbody>
-  <tr ng-repeat="y in section[1].sections">
-      <td><h5> <a href="/subsection/{{y.id}}">{{y.subSectionName}}</a></h5>
-          {{y.opis}}
+            </table>
+            <div class="form-group">
+                <label for="comment">Odpisz:</label>
+                <textarea class="form-control" rows="5" id="comment"></textarea>
+                <button type="button" class="btn btn-success" style="float:right; margin-top: 10px">Odpisz</button>
 
-      <td>{{y.numberOfTopics}}</td>
-      <td>2343</td>
-  </tr>
-
-
-  </tbody>
-</table>
-		
+            </div>
 		</div>
 		<div class="col-3">
 		
@@ -132,6 +113,7 @@
 
       </div>
  </div>
+
 
     <!-- Bootstrap core JavaScript -->
 
